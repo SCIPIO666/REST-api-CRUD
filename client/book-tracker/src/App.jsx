@@ -1,7 +1,7 @@
 
 import './App.css'
 import { useEffect,useState } from 'react';
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 function Content({header='',array=[],onDelete='',onEdit=''}){
   return(
