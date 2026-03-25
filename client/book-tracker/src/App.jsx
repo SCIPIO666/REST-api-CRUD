@@ -2,7 +2,7 @@
 import './App.css'
 import { useEffect,useState } from 'react';
 const API_BASE_URL = import.meta.env.VITE_API_URL;
-
+console.log("ENV VALUE:", import.meta.env.VITE_API_URL);
 function Content({header='',array=[],onDelete='',onEdit=''}){
   return(
     <div className='w-full bg-black text-white flex flex-wrap justify-center align-middle mx-auto rounded shadow-2xl'>
