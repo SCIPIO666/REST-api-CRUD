@@ -1,6 +1,6 @@
 const http=require('http');
 const pool=require('./db')
-let book_count=0;
+const PORT = process.env.PORT || 4000;
 const server=http.createServer(async (req,res)=>{
     // res.writeHead(200,{'content-type': 'application/json'})
 
@@ -168,8 +168,8 @@ const server=http.createServer(async (req,res)=>{
 });
 
 
-server.listen(4000,'localhost',()=>{
-   console.log( 'server live @ http//:localhost:4000')
+server.listen(PORT, '0.0.0.0', () => {
+   console.log(`Server live on port ${PORT}`);
 })
 
 

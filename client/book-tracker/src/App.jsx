@@ -1,6 +1,8 @@
 
 import './App.css'
 import { useEffect,useState } from 'react';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+
 function Content({header='',array=[],onDelete='',onEdit=''}){
   return(
     <div className='w-full bg-black text-white flex flex-wrap justify-center align-middle mx-auto rounded shadow-2xl'>
@@ -55,7 +57,7 @@ function App() {
     async function fetchAllBooks(){
       setCurrentAction(actions.allBooks.description)
       try{
-          const response=await fetch('http://localhost:4000/api/books');
+          const response=await fetch(`${API_BASE_URL}/api/books`);
         if (!response.ok) throw new Error('Failed to fetch books');    
         const data = await response.json();
         setBooks(data);
@@ -76,7 +78,7 @@ function App() {
      async  function fetchOneBook(){
       setCurrentAction(actions.oneBook.description)
       try{
-          const response=await fetch('http://localhost:4000/api/books/single');
+          const response=await fetch(`${API_BASE_URL}/api/books/single`);
         if (!response.ok) throw new Error('Failed to fetch books');    
         const data = await response.json();
         setBooks(data);
@@ -96,7 +98,7 @@ function App() {
         setIsLoading(true);
         setCurrentAction(actions.deleteBook.description)
         try{
-          const response=await fetch(`http://localhost:4000/api/books/${id}`,{
+          const response=await fetch(`${API_BASE_URL}/api/books/${id}`,{
             method : 'DELETE',         
           })
           if (response.ok){
@@ -123,7 +125,7 @@ function App() {
         setCurrentAction(actions.updateBook.description)
          if (!editTitle || !editId || !editAuthor) return alert("Please fill in all edit fields");
         try{
-      const response = await fetch(`http://localhost:4000/api/books/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/books/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: editTitle, author: editAuthor}) // Step 1: Serialize the changes
@@ -150,7 +152,7 @@ function App() {
     if (!newBook || !author) return alert("Please fill in all fields");
     
     try {
-        const response = await fetch('http://localhost:4000/api/add-book', {
+        const response = await fetch(`${API_BASE_URL}/api/add-book`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
            body: JSON.stringify({ newBook, author }) // Step 1: Serialize
