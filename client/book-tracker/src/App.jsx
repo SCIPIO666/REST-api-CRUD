@@ -47,7 +47,7 @@ function App() {
               addBook: {description: 'adding book to db' ,intent: "ADD_BOOK"},
               deleteBook: {description: 'deleting book from db' ,intent: "DELETE_BOOK"},
               updateBook: {description: 'updating book in db' ,intent: "UPDATE_BOOK"},
-              default: {description: 'server listening for requests on port  4000' ,intent: "LISTEN"}
+              default: {description: 'server listening for requests' ,intent: "LISTEN"}
               }
       ) ;
     const [intent,setIntent]=useState(actions.allBooks.intent)
