@@ -223,10 +223,6 @@ useEffect(() => {
                   type='submit'
                 >update book</button>        
               </form>
-
-            <button className='w- 1/3 p-2 m-2 rounded bg-blue-500 text-white font-bold space-x-1 hover:bg-cyan-800'
-              onClick={()=>setIntent(actions.updateBook.intent)}
-            >update book id=2</button>
             <button className='w- 1/3 p-2 m-2 rounded bg-blue-500 text-white font-bold space-x-1 hover:bg-cyan-800'
               onClick={()=>setIntent(actions.oneBook.intent)}
             >get book id=1</button>
