@@ -1,7 +1,7 @@
 
 import './App.css'
 import { useEffect,useState } from 'react';
-const API_BASE_URL = 'https://book-tracker-api-i0qa.onrender.com/';
+const API_BASE_URL = 'https://book-tracker-api-i0qa.onrender.com';
 
 function Content({header='',array=[],onDelete='',onEdit=''}){
   return(

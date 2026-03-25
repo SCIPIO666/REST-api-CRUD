@@ -4,17 +4,19 @@ const PORT = process.env.PORT || 4000;
 const server=http.createServer(async (req,res)=>{
     // res.writeHead(200,{'content-type': 'application/json'})
 
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods','POST,GET,DELETE,PUT,OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers','Content-Type,Authorization')
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-    //preflight
-    if(req.method==='OPTIONS'){
-        res.writeHead(204); // No Content
-        res.end();
-        return;
-    };
-
+            if (req.method === 'OPTIONS') {
+            res.writeHead(204, {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            });
+            res.end();
+            return;
+            }
     //ROUTES
     switch (req.method){
         case 'GET':
