@@ -1,0 +1,14 @@
+# Ignore the environment variables (The Vault)
+.env
+.env.local
+
+# Ignore the heavy lifting (Dependencies)
+**/node_modules/
+
+# Ignore build folders from React
+**/dist/
+**/build/
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db

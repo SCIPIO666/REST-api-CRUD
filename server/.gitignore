@@ -1,0 +1,13 @@
+# Secrets
+.env
+
+# Dependencies (huge folders we don't need to upload)
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# OS specific files
+.DS_Store
+Thumbs.db
